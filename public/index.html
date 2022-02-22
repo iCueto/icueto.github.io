@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"
+    ></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  </head>
+  <body class="bg-body text-white">
+    <main class="min-h-screen">
+      <header
+        x-data="{isOpen: false, scrollNavBar: false }"
+        class="min-w-full bg-primary md:px-40 z-40 fixed"
+        :class="{ 'shadow-xl transition duration-500' : scrollNavBar }"
+        @scroll.window="scrollNavBar = (window.pageYOffset > 15) ? true : false"
+      >
+        <nav
+          class="flex flex-wrap md:flex-nowrap justify-between w-full py-4 px-4 text-sm"
+        >
+          <div class="flex-auto flex justify-between w-full md:w-auto">
+            <span class="flex items-center text-sm"
+              ><span class="font-bold px-1">ISKANDER</span> CROW</span
+            >
+            <div class="flex md:hidden">
+              <button
+                @click="isOpen = !isOpen"
+                type="button"
+                class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                aria-label="toggle menu"
+              >
+                <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div
+            :class="isOpen ? 'block' : 'hidden' "
+            class="md:flex-auto w-full md:w-auto md:flex justify-between"
+          >
+            <ul
+              class="flex flex-col md:flex-row items-center justify-between md:space-x-8 space-y-4 md:space-y-0 mt-4 md:mt-0"
+            >
+              <li class="">
+                <a class="hover:text-secundary" href="#about">About</a>
+              </li>
+              <li class="">
+                <a class="hover:text-secundary" href="#experience"
+                  >Experience</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:text-secundary" href="#work">Work</a>
+              </li>
+              <li class="">
+                <a class="hover:text-secundary" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+            <ul class="mt-4 md:mt-0 flex justify-center items-center space-x-4">
+              <li class="">
+                <a
+                  target="_blank"
+                  class="hover:text-secundary"
+                  href="https://github.com/icueto"
+                >
+                  <ion-icon class="text-xl" name="logo-github"></ion-icon>
+                </a>
+              </li>
+              <li class="">
+                <a
+                  target="_blank"
+                  class="hover:text-secundary"
+                  href="https://www.linkedin.com/in/cuetodev/"
+                  ><ion-icon class="text-xl" name="logo-linkedin"></ion-icon
+                ></a>
+              </li>
+
+              <li class="">
+                <a
+                  class="inline-flex items-center py-2 px-4 text-sm text-center border-solid border-secundary border-2 text-secundary rounded-lg hover:bg-secundary hover:text-white focus:ring-4 focus:ring-red-300"
+                  target="_blank"
+                  href="#"
+                  >RESUME</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <section id="hero" class="bg-primary flex justify-center">
+        <div class="py-32 px-5 text-center md:text-left">
+          <div
+            class="text-secundary font-light text-xl md:text-2xl pb-3 md:pb-5"
+          >
+            Hi, my name is
+          </div>
+          <div
+            id="iskanderCrow"
+            class="whitespace-nowrap pb-3 text-4xl md:text-6xl font-semibold text-almostwhite"
+          >
+            ISKANDER CROW.
+          </div>
+          <div
+            class="pb-6 text-3xl md:text-6xl font-semibold text-gray-50 text-opacity-60"
+          >
+            I help others to build awesome things.
+          </div>
+          <div class="font-light text-xl max-w-2xl">
+            I am a software developer that help others to creating apps and
+            tools that cover their needs.
+          </div>
+          <div class="mt-11">
+            <a
+              class="animate-bounce py-4 px-6 text-sm text-center border-solid border-secundary border-2 text-secundary rounded-lg hover:bg-secundary hover:text-white focus:ring-4 focus:ring-red-300"
+              href="#contacts"
+            >
+              CONTACT ME
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="flex justify-center">
+        <div class="mt-24 mx-5 mb-5">
+          <div class="flex mb-14 space-x-6 justify-center items-center">
+            <h2 class="whitespace-nowrap title text-4xl md:text-5xl font-light">
+              About <b class="font-medium">Me</b>
+            </h2>
+            <div class="hidden md:flex w-3/4 h-0 border-b-2"></div>
+          </div>
+          <div class="flex flex-col-reverse gap-9 md:grid md:grid-cols-2">
+            <div class="space-y-5">
+              <div class="card p-8 md:max-w-md bg-primary rounded-lg shadow-md">
+                <div class="mb-4">
+                  <h5 class="text-xl text-secundary">Technical Skills</h5>
+                  <p class="subtitle text-xs text-gray-400">
+                    Few technologies I’ve Worked recently
+                  </p>
+                </div>
+                <ul class="inline-flex flex-wrap space-x-2 text-almostwhite">
+                  <li>Ruby/Ruby On Rails</li>
+                  <li>Dart/Flutter</li>
+                  <li>Javascript</li>
+                  <li>HTML/CSS</li>
+                  <li>Wordpress</li>
+                  <li>Woocommerce</li>
+                  <li>ReactJS</li>
+                </ul>
+              </div>
+              <div class="card p-8 md:max-w-md bg-primary rounded-lg shadow-md">
+                <div class="mb-4">
+                  <h5 class="text-xl text-secundary">Soft Skills</h5>
+                  <p class="subtitle text-xs text-gray-400">
+                    Few personal characteristics you may want in your team
+                  </p>
+                </div>
+                <ul class="flex flex-wrap space-x-2 text-almostwhite">
+                  <li>Fast-learner</li>
+                  <li>Self-taught</li>
+                  <li>Adaptability</li>
+                  <li>Problem-Solver</li>
+                  <li>Open-Minded</li>
+                  <li>Empatic</li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:max-w-sm">
+              <h5 class="font-light text-2xl mb-7">
+                Hello, my name is <b class="font-medium">Alexandro </b>Cueto
+              </h5>
+              <div class="font-light text-lg text-gray-500 text-justify">
+                <p class="mb-2">
+                  I enjoy helping others building things that cover their needs.
+                  My interest on writing code started when I was 15 year old,
+                  when I watched a inspirational video on code.org.
+                </p>
+
+                <p class="mb-2">
+                  I started to learn C++ with books and tutorials, then I jumped
+                  to PHP, and then I knew my favorite programing languange Ruby.
+                </p>
+
+                <p class="mb-2">
+                  Fast-forward to today, and I’ve had the privilege of working
+                  at advertising agencies, a start-up, and a nearshoring
+                  company. I’m trying to do my best.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experience" class="flex justify-center">
+        <div class="mt-24">
+          <div class="flex mb-14 space-x-6 justify-center items-center">
+            <h2 class="whitespace-nowrap text-4xl md:text-5xl font-light title">
+              Where I've <b class="font-medium">Worked</b>
+            </h2>
+            <div class="hidden md:flex w-3/4 h-0 border-b-2"></div>
+          </div>
+          <div class="max-w-4xl mx-5">
+            <div class="space-y-5 grid grid-cols-1">
+              <div class="card p-8 bg-primary rounded-lg shadow-md left">
+                <h5 class="font-semibold text-xl">
+                  Software Engineer
+                  <a
+                    href="https://www.encora.com"
+                    target="_blank"
+                    class="hover:underline text-secundary font-light"
+                    >@Encora</a
+                  >
+                </h5>
+                <p class="subtitle text-sm mb-3 text-gray-400">2021</p>
+                <ul class="list-disc list-inside text-almostwhite">
+                  <li>
+                    Developed code for clients platforms primarily using HTML,
+                    CSS, JS, and Ruby
+                  </li>
+                  <li>
+                    Wrote Tests for new features to ensure everything were right
+                  </li>
+                  <li>
+                    Hunted bugs on current code and refactored code using best
+                    practices
+                  </li>
+                  <li>
+                    Communicate with multi-disciplinary teams of engineers,
+                    product manager and client on a daily basis
+                  </li>
+                </ul>
+              </div>
+              <div class="card p-8 bg-primary rounded-lg shadow-md right">
+                <h5 class="font-semibold text-xl">
+                  Developer
+                  <a
+                    href="https://www.gfrmedia.com"
+                    target="_blank"
+                    class="hover:underline text-secundary font-light"
+                    >@GFRMedia</a
+                  >
+                </h5>
+                <p class="subtitle text-sm mb-3 text-gray-400">2019 - 2021</p>
+                <ul class="list-disc list-inside text-almostwhite">
+                  <li>Developed and maintained code for in-house platforms</li>
+                  <li>
+                    Worked with a variety of different languages, platforms,
+                    frameworks and content management systems as Ruby on Rails,
+                    Javascript, React, Shopify, Google Analystic, Google
+                    DataStudio and React Native
+                  </li>
+                  <li>
+                    Communicated with develop team to planifícate tasks on a
+                    weekly basis
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="card p-8 max-w-full bg-primary rounded-lg shadow-md left"
+              >
+                <h5 class="font-semibold text-xl">
+                  Developer
+                  <a
+                    href="https://www.kasta.co"
+                    target="_blank"
+                    class="hover:underline text-secundary font-light"
+                    >@Kastaco</a
+                  >
+                </h5>
+                <p class="subtitle text-sm mb-3 text-gray-400">2017 - 2019</p>
+                <ul class="list-disc list-inside text-almostwhite">
+                  <li>
+                    Developed and Deploy the Kastaco App in Record Time using
+                    React-Native
+                  </li>
+                  <li>
+                    Developed and Deploy on Heroku the web-platform and REST-API
+                    with Ruby on Rails using Airtable as data source
+                  </li>
+                  <li>
+                    Communicated with CEO, CTO and clients to planifícate tasks
+                    and solve problems on a weekly and daily basis
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="card p-8 max-w-full bg-primary rounded-lg shadow-md right"
+              >
+                <h5 class="font-semibold text-xl">
+                  Developer - Designer
+                  <a
+                    href="https://www.artecrd.com"
+                    target="_blank"
+                    class="hover:underline text-secundary font-light"
+                    >@Artecrd</a
+                  >
+                </h5>
+                <p class="subtitle text-sm mb-3 text-gray-400">2016 - 2019</p>
+                <ul class="list-disc list-inside text-almostwhite">
+                  <li>
+                    Developed and maintained websites and mobile apps for
+                    clients
+                  </li>
+                  <li>
+                    Designed logos, posters and social media posts for clients
+                  </li>
+                  <li>
+                    Worked with a variety of different languages, platforms,
+                    frameworks and content management systems such as PHP.
+                    Wordpress, woocommerce, Adobe Illustrator and Flutter
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="work" class="flex justify-center">
+        <div class="mt-24 mx-5">
+          <div class="flex mb-14 space-x-6 justify-center items-center">
+            <h2 class="whitespace-nowrap title text-4xl md:text-5xl font-light">
+              Some things <b>I've Built</b>
+            </h2>
+            <div class="hidden md:flex w-3/4 h-0 border-b-2"></div>
+          </div>
+          <div class="flex flex-col md:grid md:grid-cols-2 gap-9">
+            <div
+              class="group overflow-hidden relative card max-w-md bg-primary rounded-xl"
+            >
+              <div>
+                <div class="flex justify-between p-7">
+                  <h5 class="font-medium text-base">Clisgo</h5>
+                  <div>
+                    <span
+                      class="rounded-sm bg-gray-600 text-gray-200 text-xs px-2 py-1"
+                      >Flutter</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-full">
+                  <img
+                    class="w-full object-cover"
+                    src="/public/img/clisgo_card_img.png"
+                    alt="clisgo_app"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex items-center flex-col justify-center space-y-5 absolute inset-0 duration-500 opacity-0 group-hover:opacity-70 bg-black"
+              >
+                <div class="mx-4">Find services you need in your city.</div>
+                <div class="md:flex space-x-4">
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://play.google.com/store/apps/details?id=com.artecrd.clisgo"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-google-playstore"
+                    ></ion-icon>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://apps.apple.com/do/app/clisgo/id1470898113"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-apple-appstore"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="group overflow-hidden relative card max-w-md bg-primary rounded-xl"
+            >
+              <div>
+                <div class="flex justify-between p-7">
+                  <h5 class="font-medium text-base">Kastaco</h5>
+                  <div class="space-x-3">
+                    <span
+                      class="rounded-sm bg-gray-600 text-gray-200 text-xs px-2 py-1"
+                      >Ruby On Rails</span
+                    >
+                    <span
+                      class="rounded-sm bg-gray-600 text-gray-200 text-xs px-2 py-1"
+                      >React Native</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-full">
+                  <img
+                    class="w-full object-cover"
+                    src="/public/img/kastaco_card_img.png"
+                    alt="kastaco_app"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center space-y-5 text-center absolute inset-0 duration-500 opacity-0 group-hover:opacity-70 bg-black"
+              >
+                <div class="mx-4">
+                  Connect voice talents with production studios, advertising
+                  agencies and companies in general.
+                </div>
+                <div class="md:flex space-x-4">
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://play.google.com/store/apps/details?id=co.kastaco.talent"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-google-playstore"
+                    ></ion-icon>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://apps.apple.com/do/app/kastaco/id1334725561"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-apple-appstore"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="group overflow-hidden relative card max-w-md bg-primary rounded-xl"
+            >
+              <div>
+                <div class="flex justify-between p-7">
+                  <h5 class="font-medium text-base">Unique Destination</h5>
+                  <div>
+                    <span
+                      class="rounded-sm bg-gray-600 text-gray-200 text-xs px-2 py-1"
+                      >Flutter</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-full">
+                  <img
+                    class="w-full object-cover"
+                    src="/public/img/unique_destination_card_img.png"
+                    alt="clisgo_app"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center space-y-5 text-center absolute inset-0 duration-500 opacity-0 group-hover:opacity-70 bg-black"
+              >
+                <div class="mx-4">
+                  A travel guide and travel agency about Dominican Republic.
+                </div>
+                <div class="md:flex space-x-4">
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://play.google.com/store/apps/details?id=do.unique.destination"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-google-playstore"
+                    ></ion-icon>
+                  </a>
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://apps.apple.com/do/app/unique-destination/id1486466363"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-apple-appstore"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="group overflow-hidden relative card max-w-md bg-primary rounded-xl"
+            >
+              <div>
+                <div class="flex justify-between p-7">
+                  <h5 class="font-medium text-base">Daily Bible</h5>
+                  <div>
+                    <span
+                      class="rounded-sm bg-gray-600 text-gray-200 text-xs px-2 py-1"
+                      >Flutter</span
+                    >
+                  </div>
+                </div>
+                <div class="flex-none w-full">
+                  <img
+                    class="w-full object-cover"
+                    src="/public/img/daily_bible_card_img.png"
+                    alt="clisgo_app"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col items-center justify-center space-y-5 text-center absolute inset-0 duration-500 opacity-0 group-hover:opacity-70 bg-black"
+              >
+                <div class="mx-4">
+                  Receive a daily bible's verse in your phone.
+                </div>
+                <div class="md:flex space-x-4">
+                  <a
+                    target="_blank"
+                    class="hover:text-secundary"
+                    href="https://play.google.com/store/apps/details?id=com.faithinchrist.dailybible"
+                  >
+                    <ion-icon
+                      class="text-3xl"
+                      name="logo-google-playstore"
+                    ></ion-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contacts" class="flex justify-center justify-items-center">
+        <div class="my-28 mx-5 text-center space-y-10">
+          <h2 class="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+          <div>
+            I'm open to new job oportunities, if you have one, my inbox is open.
+          </div>
+          <div>
+            <a
+              class="py-4 px-6 text-sm text-center border-solid border-secundary border-2 text-secundary rounded-lg hover:bg-secundary hover:text-white focus:ring-4 focus:ring-red-300"
+              href="mailto:cuetodev@gmail.com"
+              >Say Hello</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer
+        class="space-x-5 text-center block md:flex md:justify-between md:flex-wrap px-8 py-4 bg-primary text-almostwhite"
+      >
+        <div>Designed & Built by Alexandro Cueto</div>
+        <div class="md:flex space-x-5">
+          <a
+            target="_blank"
+            class="hover:text-secundary"
+            href="https://github.com/icueto"
+          >
+            <ion-icon class="text-xl" name="logo-github"></ion-icon>
+          </a>
+          <a
+            target="_blank"
+            class="hover:text-secundary"
+            href="https://www.linkedin.com/in/cuetodev/"
+          >
+            <ion-icon class="text-xl" name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+      </footer>
+    </main>
+  </body>
+  <script src="/public/main.js"></script>
+</html>

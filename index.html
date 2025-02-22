@@ -4,7 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
+    <meta name="theme-color" content="#1f2937" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Iskander Crow | Software Developer</title>
+    <meta name="description" content="Software developer specializing in Ruby on Rails, Flutter, JavaScript, and web development. Helping others build awesome digital solutions." />
+    <meta name="keywords" content="software developer, web developer, Ruby on Rails, PHP, Flutter, JavaScript, React Native, full stack developer" />
+    <meta name="author" content="Alexandro Cueto" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Iskander Crow | Software Developer" />
+    <meta property="og:description" content="Software developer specializing in Ruby on Rails, PHP, Flutter, JavaScript, and web development. Helping others build awesome digital solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iskandercrow.com" />
+    <meta property="og:image" content="https://iskandercrow.com/public/img/og-image.jpg" />
+    <meta property="og:image:alt" content="Iskander Crow - Software Developer Portfolio" />
+    <meta property="og:site_name" content="Iskander Crow Portfolio" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iskander Crow | Software Developer" />
+    <meta name="twitter:description" content="Software developer specializing in Ruby on Rails, PHP, Flutter, JavaScript, and web development. Helping others build awesome digital solutions." />
+    <meta name="twitter:image" content="https://iskandercrow.com/public/img/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Iskander Crow - Software Developer Portfolio" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandro Cueto",
+      "alternateName": "Iskander Crow",
+      "url": "https://iskandercrow.com",
+      "jobTitle": "Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ResolveDigital"
+      },
+      "knowsAbout": ["Ruby on Rails", "Flutter", "PHP", "JavaScript", "React Native", "Web Development"],
+      "sameAs": [
+        "https://github.com/icueto",
+        "https://www.linkedin.com/in/cuetodev/"
+      ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/public/img/favicon.ico" />
+
     <link rel="stylesheet" href="public/style.css" />
     <script
       defer
@@ -12,6 +59,8 @@
     ></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    
+    <!-- Existing resources -->
   </head>
   <body class="bg-body text-white">
     <main class="min-h-screen">
@@ -97,7 +146,8 @@
           </div>
         </nav>
       </header>
-      <section id="hero" class="bg-primary flex justify-center">
+
+      <article id="hero" class="bg-primary flex justify-center" role="region" aria-label="Introduction">
         <div class="py-32 px-5 text-center md:text-left">
           <div
             class="text-secundary font-light text-xl md:text-2xl pb-3 md:pb-5"
@@ -128,8 +178,9 @@
             </a>
           </div>
         </div>
-      </section>
-      <section id="about" class="flex justify-center">
+      </article>
+
+      <article id="about" class="flex justify-center" role="region" aria-label="About section">
         <div class="mt-24 mx-5 mb-5">
           <div class="flex mb-14 space-x-6 justify-center items-center">
             <h2 class="whitespace-nowrap title text-4xl md:text-5xl font-light">
@@ -198,8 +249,9 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="experience" class="flex justify-center">
+      </article>
+
+      <article id="experience" class="flex justify-center" role="region" aria-label="Work experience">
         <div class="mt-24">
           <div class="flex mb-14 space-x-6 justify-center items-center">
             <h2 class="whitespace-nowrap text-4xl md:text-5xl font-light title">
@@ -350,8 +402,9 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="work" class="flex justify-center">
+      </article>
+
+      <article id="work" class="flex justify-center" role="region" aria-label="Portfolio projects">
         <div class="mt-24 mx-5">
           <div class="flex mb-14 space-x-6 justify-center items-center">
             <h2 class="whitespace-nowrap title text-4xl md:text-5xl font-light">
@@ -559,8 +612,9 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="contacts" class="flex justify-center justify-items-center">
+      </article>
+
+      <article id="contacts" class="flex justify-center justify-items-center" role="region" aria-label="Contact information">
         <div class="my-28 mx-5 text-center space-y-10">
           <h2 class="text-4xl md:text-5xl font-bold">Get In Touch</h2>
           <div>
@@ -574,9 +628,11 @@
             >
           </div>
         </div>
-      </section>
+      </article>
+
       <footer
         class="space-x-5 text-center block md:flex md:justify-between md:flex-wrap px-8 py-4 bg-primary text-almostwhite"
+        role="contentinfo"
       >
         <div>Designed & Built by Alexandro Cueto</div>
         <div class="md:flex space-x-5">
@@ -597,6 +653,6 @@
         </div>
       </footer>
     </main>
+    <script src="/public/main.js"></script>
   </body>
-  <script src="/public/main.js"></script>
 </html>
